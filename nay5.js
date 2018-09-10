@@ -123,7 +123,7 @@ message.channel.send(`Now playing : **( ${videoInfo.title} )** :musical_note: `)
         if (!message.member.voiceChannel) return message.channel.send('You must be in my audio room :microphone2:');
         message.member.voiceChannel.join().then(message.channel.send('**Done , ::white_check_mark: **'));
     }
-    else if (mess.startsWith(prefix + 'play')) {
+    else if (mess.startsWith(prefix + 'Vplay')) {
         if (!message.member.voiceChannel) return message.channel.send('You must be in my audio room :microphone2:');
         if (isPlaying == false) return message.channel.send('**Done , :white_check_mark: **');
 message.channel.send('Now playing : ${videoInfo.title} :musical_note:')
@@ -317,19 +317,6 @@ let args = message.content.split(' ').slice(1).join(' ');
 
 
 
-
-			if (isPlaying) {
-				queue.splice(1, 0, queue[0]);
-				songsQueue.splice(1, 0, songsQueue[0]);
-						message.reply(` `);
-                             const embed = new Discord.RichEmbed()
-                          .setColor("36393f")
-                         .setDescription(`?? **${songsQueue[0]} سوف يتم تكرار الاغنية`)
-                      .setTimestamp()
-                     .setFooter(bot.user.username+" ||", bot.user.avatarURL)
-                     message.channel.send({embed});
-
-			}
 
 
    
