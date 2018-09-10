@@ -7,7 +7,7 @@ const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
-const prefix = 'V';
+const prefix = '**';
 client.on('ready', function() {
     console.log(`i am ready ${client.user.username}`);
 });
@@ -123,7 +123,7 @@ message.channel.send(`Now playing : **( ${videoInfo.title} )** :musical_note: `)
         if (!message.member.voiceChannel) return message.channel.send('You must be in my audio room :microphone2:');
         message.member.voiceChannel.join().then(message.channel.send('**Done , ::white_check_mark: **'));
     }
-    else if (mess.startsWith(prefix + 'Vplay')) {
+    else if (mess.startsWith(prefix + 'play')) {
         if (!message.member.voiceChannel) return message.channel.send('You must be in my audio room :microphone2:');
         if (isPlaying == false) return message.channel.send('**Done , :white_check_mark: **');
 message.channel.send('Now playing : ${videoInfo.title} :musical_note:')
@@ -231,7 +231,7 @@ ${prefix}join ⇏ لدخول البوت الروم
 
 
 client.on('message', function(message) {
-	const myID = "479781341236559883";
+	const myID = "308280511371935744";
     let args = message.content.split(" ").slice(1).join(" ");
     if(message.content.startsWith(prefix + "setname")) {
 		        if(message.author.id !== myID) return;
@@ -289,7 +289,7 @@ client.on('message', function(message) {
 
 client.on('message', async message => {
             if(!message.channel.guild) return;
-             if (message.content.startsWith("V")) {
+             if (message.content.startsWith("$")) {
 let args = message.content.split(' ').slice(1).join(' ');
             let sigMessage = await args;
             
@@ -313,9 +313,6 @@ let args = message.content.split(' ').slice(1).join(' ');
         
 }
 });
-
-
-
 
 
 
